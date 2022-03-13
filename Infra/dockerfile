@@ -3,7 +3,7 @@ FROM jenkins/jenkins:lts-jdk11
 USER root
 
 RUN mkdir -p /temp/download && \
-curl -l https://download.docker.com/linux/static/stable/x86_64/docker-18.03.1-ce.tgz | tar -xz -c /tmp/download && \
+curl -l https://download.docker.com/linux/static/stable/x86_64/docker-18.03.1-ce.tgz | tar -xz -C /tmp/download && \
 rm -rf /temp/download/docker/dockerd && \
 mv /temp/download/docker/* /usr/local/bin/ && \
 rm -rf /tmp/download && \
